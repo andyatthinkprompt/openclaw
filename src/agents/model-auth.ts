@@ -244,6 +244,7 @@ export function resolveEnvApiKey(provider: string): EnvApiKeyResult | null {
       return null;
     }
     const source = applied.has(envVar) ? `shell env: ${envVar}` : `env: ${envVar}`;
+    console.log(`[DEBUG] Picked API key from ${envVar}: ${value.substring(0, 8)}...`);
     return { apiKey: value, source };
   };
 
